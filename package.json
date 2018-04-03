@@ -1,0 +1,30 @@
+{
+  "name": "node-red-contrib-ghome",
+  "version": "0.0.5",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neonox31/node-red-contrib-ghome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neonox31/node-red-contrib-ghome/issues"
+  },
+  "homepage": "https://github.com/Neonox31/node-red-contrib-ghome#readme",
+  "node-red": {
+    "nodes": {
+      "ghome-notify": "src/notify/notify.js",
+      "ghome-play": "src/play/play.js",
+      "ghome-volume": "src/volume/volume.js"
+    }
+  },
+  "dependencies": {
+    "castv2-client": "^1.2.0",
+    "google-tts-api": "^0.0.2"
+  }
+}

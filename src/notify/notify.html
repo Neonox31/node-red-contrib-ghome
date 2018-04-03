@@ -1,0 +1,72 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ghome-notify', {
+        category: 'function',
+        color: '#42A5F5',
+        defaults: {
+            name: { value: "" },
+            ip: { value: "", required: true },
+            lang: { value: "en_US" },
+            customVolume: { value: false },
+            volume: { value: 50 }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "cast_white_24x24.png",
+        label: function() {
+            return this.name || "Google Home Notify";
+        },
+        paletteLabel: "Google Home Notify",
+        oneditprepare: function() {
+            const node = this;
+
+            function toggleCustomVolume() {
+                if ($('#node-input-customVolume').prop('checked')) {
+                    $('#node-input-volume').prop('disabled', false);
+                } else {
+                    $('#node-input-volume').prop('disabled', true);
+                }
+            }
+
+            toggleCustomVolume();
+            $('#node-input-customVolume:checkbox').change(() => {
+                toggleCustomVolume();
+            });
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ghome-notify">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-ip">IP</label>
+        <input type="text" id="node-input-ip" placeholder="192.168.10.x">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-lang">Language</label>
+         <select id="node-input-lang" style="width: 70%;">
+            <option value="en_US">en_US</option>
+            <option value="fr_FR">fr_FR</option>
+         </select>
+    </div>
+
+    <br />
+
+    <div class="form-row">
+        <input type="checkbox" id="node-input-customVolume" placeholder="" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-customVolume" style="width: 70%;">Use custom volume</label>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-volume">Volume (%)</label>
+        <input type="number" id="node-input-volume" placeholder="50">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="ghome-notify">
+    <p>Voice notifications using Google Home</p>
+</script>
