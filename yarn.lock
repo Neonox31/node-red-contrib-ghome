@@ -9,10 +9,6 @@ ascli@~0.3:
     colour latest
     optjs latest
 
-bindings@~1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
-
 bufferview@~1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/bufferview/-/bufferview-1.0.1.tgz#7afd74a45f937fa422a1d338c08bbfdc76cd725d"
@@ -24,7 +20,7 @@ bufferview@~1:
     bufferview "~1"
     long "~2 >=2.2.3"
 
-castv2-client@^1.2.0:
+castv2-client@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/castv2-client/-/castv2-client-1.2.0.tgz#a9193b1a5448b8cb9a0415bd021c8811ed7b0544"
   dependencies:
@@ -54,9 +50,9 @@ encoding@^0.1.11:
   dependencies:
     iconv-lite "~0.4.13"
 
-google-tts-api@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/google-tts-api/-/google-tts-api-0.0.2.tgz#169bc310778a4624146cbe26f367873a862c3894"
+google-tts-api@~0.0.2:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/google-tts-api/-/google-tts-api-0.0.3.tgz#2fbc4db33fd58f2acbd6af1443026e15922dcca5"
   dependencies:
     isomorphic-fetch "^2.2.1"
 
@@ -79,20 +75,9 @@ isomorphic-fetch@^2.2.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/long/-/long-2.4.0.tgz#9fa180bb1d9500cdc29c4156766a1995e1f4524f"
 
-mdns@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/mdns/-/mdns-2.3.4.tgz#650380ac76089430cf6c8981a945dbd27d02f5b7"
-  dependencies:
-    bindings "~1.2.1"
-    nan "~2.3.0"
-
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
-
-nan@~2.3.0:
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.3.5.tgz#822a0dc266290ce4cd3a12282ca3e7e364668a08"
 
 node-fetch@^1.0.1:
   version "1.7.3"
