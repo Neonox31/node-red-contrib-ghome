@@ -1,10 +1,14 @@
 {
-  "name": "node-red-contrib-ghome",
-  "version": "0.0.6",
+  "name": "@neonox31/node-red-contrib-ghome",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version -m \"chore(release): version %s\" -t \"\""
   },
   "repository": {
     "type": "git",
@@ -16,6 +20,13 @@
     "url": "https://github.com/Neonox31/node-red-contrib-ghome/issues"
   },
   "homepage": "https://github.com/Neonox31/node-red-contrib-ghome#readme",
+  "keywords": [
+    "node-red",
+    "google",
+    "google home",
+    "cast",
+    "speech"
+  ],
   "node-red": {
     "nodes": {
       "ghome-notify": "src/notify/notify.js",
@@ -26,5 +37,8 @@
   "dependencies": {
     "castv2-client": "~1.2.0",
     "google-tts-api": "~0.0.2"
+  },
+  "devDependencies": {
+    "standard-version": "^4.4.0"
   }
 }
