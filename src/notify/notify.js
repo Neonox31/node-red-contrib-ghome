@@ -1,5 +1,13 @@
 const GHome = require('../ghome.js');
 
+const isValidVolume = (volume) => {
+    if (isNaN(volume)) {
+        return false;
+    }
+
+    return !(volume < 0 || volume > 100);
+};
+
 module.exports = function (RED) {
 
     function GHomeNotifyNode(config) {
@@ -11,14 +19,19 @@ module.exports = function (RED) {
 
             try {
                 await ghome.connect();
-                let volume = await ghome.getVolume();
-                if (config.customVolume) {
-                    await ghome.setVolume(parseInt(config.volume));
+                let initialVolume = await ghome.getVolume();
+                const customVolume = msg.volume != null ? msg.volume : parseInt(config.volume);
+
+                if (isValidVolume(customVolume)) {
+                    await ghome.setVolume(parseInt(customVolume));
                 }
+
                 await ghome.notify(msg.payload);
-                if (config.customVolume) {
-                    await ghome.setVolume(volume);
+
+                if (isValidVolume(customVolume)) {
+                    await ghome.setVolume(initialVolume);
                 }
+
                 await ghome.disconnect();
             } catch (err) {
                 node.error(err);
